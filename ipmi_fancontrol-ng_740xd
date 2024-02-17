@@ -31,7 +31,7 @@ $hostname =~ s/\n//g;
 
 #my $number_of_cpus      = 2; # Number of CPUs to search for
 #my $number_of_gpus      = 4; # Number of GPUs to search for
-my $number_of_fans      = 3; # Number of FANs to search for
+my $number_of_fans      = ; # Number of FANs to search for
 #my $number_of_fanbanks  = 1; # Number of BANKs of FANs to update
 my $min_temp_change     = 0; # *C minimum change to actually cause a fan speed update
 my $seconds_to_sleep    = 5; # Number of seconds to sleep between update loops
@@ -48,13 +48,15 @@ my $ipmi_preamble       = "ipmitool -I $ipmi_connectmode";
 
 # CPU Temp -> Fan Speed Mappings
 my %cpu_temp_to_fan_speed;
-$cpu_temp_to_fan_speed{75} = 0x64;
-$cpu_temp_to_fan_speed{70} = 0x56;
-$cpu_temp_to_fan_speed{60} = 0x48;
-$cpu_temp_to_fan_speed{55} = 0x40;
-$cpu_temp_to_fan_speed{50} = 0x32;
-$cpu_temp_to_fan_speed{40} = 0x25;
-$cpu_temp_to_fan_speed{10} = 0x20;
+$cpu_temp_to_fan_speed{80} = 0x64;
+$cpu_temp_to_fan_speed{75} = 0x46;
+$cpu_temp_to_fan_speed{70} = 0x3c;
+$cpu_temp_to_fan_speed{65} = 0x32;
+$cpu_temp_to_fan_speed{60} = 0x28;
+$cpu_temp_to_fan_speed{55} = 0x1e;
+$cpu_temp_to_fan_speed{50} = 0x14;
+$cpu_temp_to_fan_speed{45} = 0x0f;
+$cpu_temp_to_fan_speed{30} = 0x0a;
 
 my %cpu_temp_scale;
 
